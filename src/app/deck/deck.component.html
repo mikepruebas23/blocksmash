@@ -1,0 +1,49 @@
+<p>Todas tus cartas</p>
+<div class="deck">
+    <div *ngFor="let card of collectionCards; let i= index" class="content-cards">
+        <div (click)="changeCard(i)">
+            <div class="card-character" id="{{card.id}}">
+                <div>Name: {{card.name}}</div>
+                <div>Stock: {{card.stock}}</div>
+                <div>Level: {{card.lvl}}</div>
+                <div>Evolve: {{card.evolve}}</div>
+                <div id="barr">
+                    <div id="progress"></div>
+                </div>
+            </div>
+            <button (click)="checkUpgradeCard(i)">Upgrade</button>
+
+        </div>
+    </div>
+    <br>
+    <hr>
+    <p>Cartas para jugar</p>
+    <div id="myDeckList" class="content-cards-deck">
+        <div *ngFor="let card of myDeck; let i=index" class="content-cards">
+            <button (click)="removeCardFromHand(i)">
+                <span class="material-icons">close</span>
+            </button>
+            <div>
+                <div class="card-character">
+                    <div>Name: {{card.name}}</div>
+                    <div>Stock: {{card.stock}}</div>
+                    <div>Level: {{card.lvl}}</div>
+                    <div>Evolve: {{card.evolve}}</div>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    <!-- <div id="myDeckList" class="content-cards-deck">
+        <div id="spot-1" class="card-character"(click)="selectSpotCard($event);"></div>
+        <div id="spot-2" class="card-character"(click)="selectSpotCard($event);"></div>
+        <div id="spot-3" class="card-character"(click)="selectSpotCard($event);"></div>
+        <div id="spot-4" class="card-character"(click)="selectSpotCard($event);"></div>
+        <div id="spot-5" class="card-character"(click)="selectSpotCard($event);"></div>
+    </div> -->
+    <br>
+    <!-- <button (click)=selectDeck()>Selecciona tu deck</button> -->
+    <br>
+    <br>
+    
+</div>
