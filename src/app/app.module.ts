@@ -41,6 +41,7 @@ import { HistoryComponent } from './history/history.component';
 import { LevelsComponent } from './levels/levels.component';
 import { DeckComponent } from './deck/deck.component';
 import { StoreComponent } from './store/store.component';
+import { PlatformComponent } from './platform/platform.component';
 
 
 
@@ -58,7 +59,8 @@ import { StoreComponent } from './store/store.component';
     HistoryComponent,
     LevelsComponent,
     DeckComponent,
-    StoreComponent
+    StoreComponent,
+    PlatformComponent
 
   ],
   imports: [

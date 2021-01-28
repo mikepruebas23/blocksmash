@@ -25,6 +25,10 @@
                 </div>
                 <div *ngIf="isLoggedIn">
                     <div class="material-icons-new">leaderboard</div>
+                    <a class="link-style" mat-list-item routerLink="/platform" (click)="toCloseMenu()">PLATFORM</a>
+                </div>
+                <div *ngIf="isLoggedIn">
+                    <div class="material-icons-new">leaderboard</div>
                     <a class="link-style" mat-list-item routerLink="/pr" (click)="toCloseMenu()">RANKING</a>
                 </div>
                 <div *ngIf="isLoggedIn">

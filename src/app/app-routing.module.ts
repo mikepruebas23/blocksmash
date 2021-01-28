@@ -12,6 +12,7 @@ import { RegisterCodeComponent } from './register-code/register-code.component';
 import { HistoryComponent } from './history/history.component';
 import { DeckComponent } from './deck/deck.component';
 import { StoreComponent } from './store/store.component';
+import { PlatformComponent } from './platform/platform.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -30,7 +31,8 @@ const routes: Routes = [
   { path: 'register-code', component: RegisterCodeComponent },
   { path: 'history', component: HistoryComponent },
   { path: 'deck', component: DeckComponent },
-  { path: 'store', component: StoreComponent }
+  { path: 'store', component: StoreComponent },
+  { path: 'platform', component: PlatformComponent }
 ];
 
 @NgModule({

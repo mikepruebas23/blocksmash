@@ -40,11 +40,10 @@ export class LoginComponent implements OnInit {
     try {
       const user = await this.authSvc.login(email, password);
       if (user) {
-        this.checkUserIsVerified(user);
+        //revisar al iniciar sesion porque si hace el registro pero entra primero el guard.
         this.valideUserSmash(user.uid, email, user.emailVerified);
-        this.validateMinerals(user.uid, email);
-        this.validateHero(user.uid, email);
-        // window.location.reload();
+        // console.log(user);
+        // this.checkUserIsVerified(user);
         this.router.navigate(['/home']);
       }
     } catch (error) {
@@ -81,7 +80,7 @@ export class LoginComponent implements OnInit {
             rnkPoints: 0,
             position: ''
           };
-
+          
           return userRef.set(data, { merge: true });
       }
         catch (error) 
@@ -96,73 +95,6 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('USERUID',value['uid']);
         sessionStorage.setItem('RNKPOINTS',value['rnkPoints']);
         sessionStorage.setItem('USERPHOTOURL',value['photoURL']);
-      }
-    });
-    return data;
-  }
-
-  async validateMinerals(id, email){
-    let data: any;
-    data = await this.afs.collection('minerals').doc(id).valueChanges().subscribe(value => {
-      if(value == undefined) {
-        try {
-          const userRef: AngularFirestoreDocument<Minerals> = this.afs.doc(`minerals/${id}`);
-
-          const data: Minerals = {
-            uid: id,
-            email: email,
-            gold: null
-          };
-
-          return userRef.set(data, { merge: true });
-      }
-        catch (error) 
-        {
-          console.log('ERROR: ', error);
-        }
-      }
-      else
-      {
-        sessionStorage.setItem('GOLD',value['gold']);
-      }
-    });
-    return data;
-  }
-
-  async validateHero(id, email){
-    let data: any;
-    data = await this.afs.collection('hero').doc(id).valueChanges().subscribe(value => {
-      if(value == undefined) {
-        try {
-          const userRef: AngularFirestoreDocument<Hero> = this.afs.doc(`hero/${id}`);
-
-          const data: Hero = {
-            uid: id,
-            email: email,
-            name: null,
-            atk: null,
-            def: null,
-            life: null,
-            exp: null,
-            lvl: null,
-            active: false
-          }
-
-          return userRef.set(data, { merge: true });
-      }
-        catch (error) 
-        {
-          console.log('ERROR: ', error);
-        }
-      }
-      else
-      {
-        sessionStorage.setItem('HERONAME',value['name']);
-        sessionStorage.setItem('HEROATK',value['atk']);
-        sessionStorage.setItem('HERODEF',value['def']);
-        sessionStorage.setItem('HEROLIFE',value['life']);
-        sessionStorage.setItem('HEROEXP',value['exp']);
-        sessionStorage.setItem('HEROLVL',value['lvl']);
       }
     });
     return data;

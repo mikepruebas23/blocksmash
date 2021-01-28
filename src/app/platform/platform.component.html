@@ -1,0 +1,14 @@
+<div class="platform" >
+    <div class="platform-bar-side">side bar</div>
+    <div class="platform-bar-center">
+        <div class="platform-box" *ngFor="let boxElement of boxElements; let i = index">
+            <div>{{boxElement.number}}</div>
+            <div>{{boxElement.class}}</div>
+            <div>{{boxElement.value}}</div>
+        </div>
+    </div>
+    <div class="platform-bar-side">side bar</div>
+</div>
+<div class="platform-action">
+    <div class="platform-action-buttons"></div>
+</div>
