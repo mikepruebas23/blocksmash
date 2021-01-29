@@ -22,8 +22,18 @@
     margin: 0 5px;
 }
 .platform-box{
-    width: 40%;
+    width: 10%;
+    height: 50px;
+    padding: 5px;
+    border-radius: 5px;
     margin: 5px;
     background: #eaeaea;
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1), 1px 1px 1px 1px rgba(0, 0, 0, 0.1), 0px 0px 1px 0px rgba(0, 0, 0, 0.12);
+}
+
+.green{
+    background-color: #4caf50;
+}
+.red{
+    background-color: #ff5722;
 }

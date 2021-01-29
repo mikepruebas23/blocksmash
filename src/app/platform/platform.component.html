@@ -1,10 +1,11 @@
 <div class="platform" >
     <div class="platform-bar-side">side bar</div>
     <div class="platform-bar-center">
-        <div class="platform-box" *ngFor="let boxElement of boxElements; let i = index">
-            <div>{{boxElement.number}}</div>
-            <div>{{boxElement.class}}</div>
-            <div>{{boxElement.value}}</div>
+        <div class="platform-box" id="{{boxElement.number}}" 
+        *ngFor="let boxElement of boxElements; let i = index" (click)="selectBox(i)">
+            <!-- <div>{{boxElement.class}}</div>
+            <div>{{boxElement.value}}</div> -->
+            <div>{{boxElement.rndom}}</div>
         </div>
     </div>
     <div class="platform-bar-side">side bar</div>
